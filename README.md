@@ -10,3 +10,4 @@ http://hal.inria.fr/docs/00/69/45/25/PDF/template.pdf
 http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/
 The project also has a blog on http://creage-project.blogspot.in/. I will start posting as soon as I get something done.
 Next step would be Voronoi Tessellation of this island.
+Code is licensed under Creative Commons.
