@@ -7,7 +7,7 @@ def island():
 def run():
 
 def baseseed():
-  #new screen and deletion of default cube
+        #new screen and deletion of default cube
 	bpy.ops.screen.new()
 	bpy.ops.object.delete(use_global=False)
 	
