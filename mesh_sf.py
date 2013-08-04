@@ -13,7 +13,7 @@ def createMesh(name, origin, verts, edges, faces):
     bpy.context.scene.objects.link(ob)
 
     # Create mesh from given verts, edges, faces. Either edges or
-    # faces should be [], or you ask for problems
+    # faces should be []
     me.from_pydata(verts, edges, faces)
 
     # Update mesh with new data
