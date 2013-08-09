@@ -85,7 +85,18 @@ def innerwall(origin):
     ob1 = createMesh('Solid', origin, crb, [], faces)
     return
 
+def base(origin):
+    side=8
+    verts=[[0,0,0],[side,side,0],[side,-side,0],[-side,-side,0],[-side,side,0],[side,side,-0.2],[side,-side,-0.2],[-side,-side,-0.2],[-side,side,-0.2]]
+    faces=[[1,2,3,4],[5,6,7,8],[1,2,6,5],[2,3,7,6],[3,4,8,7],[4,1,5,8]]
+    ob1 = createMesh('Solid', origin, verts, [], faces)
+    return
+
+
 if __name__ == "__main__":
+    bpy.ops.screen.new()
+    bpy.ops.object.delete(use_global=False)
     run((0,0,0))
     courtyard((0,0,0))
     innerwall((0,0,0))
+    base((0,0,0))
