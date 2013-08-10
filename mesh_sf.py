@@ -41,10 +41,10 @@ def run(origin):
     return
 
 def outerwall(origin):
-    cor=9.5
-    cir=9.3
-    sor=9
-    sir=8.8
+    cor=8.2
+    cir=cor-0.2
+    sor=7.2
+    sir=sor-0.2
     sp16=sin(pi/16)
     cp16=cos(pi/16) 
     x=8
@@ -143,8 +143,8 @@ def base(origin):
 if __name__ == "__main__":
     bpy.ops.screen.new()
     bpy.ops.object.delete(use_global=False)
-    run((0,0,0))
+    #run((0,0,0))
     courtyard((0,0,0))
     innerwall((0,0,0))
-    #base((0,0,0))
+    base((0,0,0))
     outerwall((0,0,0))
