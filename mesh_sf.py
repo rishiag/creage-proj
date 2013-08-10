@@ -40,10 +40,57 @@ def run(origin):
     bpy.ops.transform.translate(value=(0,2,0))
     return
 
-def outerwall():
-    cor=9
-    cir=8.8
-    
+def outerwall(origin):
+    cor=9.5
+    cir=9.3
+    sor=9
+    sir=8.8
+    sp16=sin(pi/16)
+    cp16=cos(pi/16) 
+    x=8
+    crb=[[0,0,0]]
+    for n in range(0,32):
+        #print "check"
+        if (n%2==0):
+            crb.append([cor*sin((pi*n)/16),cor*cos((pi*n)/16),0])
+        elif (n%2==1):
+            crb.append([sor*sin((pi*n)/16),sor*cos((pi*n)/16),0])
+    for n in range(0,32):
+        #print "check"
+        if (n%2==0):
+            crb.append([cor*sin((pi*n)/16),cor*cos((pi*n)/16),1])
+        elif (n%2==1):
+            crb.append([sor*sin((pi*n)/16),sor*cos((pi*n)/16),1])
+    for n in range(0,32):
+        #print "check"
+        if (n%2==0):
+            crb.append([cir*sin((pi*n)/16),cir*cos((pi*n)/16),0])
+        elif (n%2==1):
+            crb.append([sir*sin((pi*n)/16),sir*cos((pi*n)/16),0])
+    for n in range(0,32):
+        #print "check"
+        if (n%2==0):
+            crb.append([cir*sin((pi*n)/16),cir*cos((pi*n)/16),1])
+        elif (n%2==1):
+            crb.append([sir*sin((pi*n)/16),sir*cos((pi*n)/16),1])
+    faces=[]
+
+    for n in range(1,32):
+        faces.append([n,n+1,n+33,n+32])
+    faces.append([32,1,33,64])
+    for n in range(1,32):
+        faces.append([n+64,n+65,n+97,n+96])
+    faces.append([96,65,97,128])
+    for n in range(1,32):
+        faces.append([n,n+1,n+65,n+64])
+    faces.append([32,1,96,65])
+    for n in range(1,32):
+        faces.append([n+32,n+33,n+97,n+96])
+    faces.append([64,33,97,128])
+
+    #for index, item in enumerate(faces):
+    #    print index, item
+    ob1 = createMesh('Solid', origin, crb, [], faces)
     return
 
 def courtyard(origin):
@@ -99,4 +146,5 @@ if __name__ == "__main__":
     run((0,0,0))
     courtyard((0,0,0))
     innerwall((0,0,0))
-    base((0,0,0))
+    #base((0,0,0))
+    outerwall((0,0,0))
